@@ -2,7 +2,9 @@ const unknowResolvers = {
 
   Query: {
 
-    getUnknow: () => {
+    getUnknow: async (_, __, { dataSources: ds }) => {
+      const data = await ds.notion.queryDatabase()
+      console.log(data)
       return { title: 'weight' }
     }
 

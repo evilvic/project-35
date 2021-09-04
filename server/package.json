@@ -6,7 +6,9 @@
     "dev": "nodemon ."
   },
   "dependencies": {
+    "apollo-datasource-rest": "^3.2.0",
     "apollo-server": "^3.3.0",
+    "dotenv": "^10.0.0",
     "graphql": "^15.5.2"
   },
   "devDependencies": {
