@@ -2,7 +2,7 @@ const { gql } = require('apollo-server')
 
 const types = gql`
 
-  type Unknow {
+  type Collection {
     title: String
   }
 

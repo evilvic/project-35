@@ -4,7 +4,7 @@ const queries = gql`
 
   type Query {
 
-    getUnknow: Unknow
+    collection: String
 
   }
 

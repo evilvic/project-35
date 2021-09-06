@@ -17,8 +17,8 @@ class NotionAPI extends RESTDataSource {
     request.headers.set('Notion-Version', version)
   }
 
-  async queryDatabase() {
-    return await this.post('/databases/966ad8cc8faf4695b3743f22efbc6d99/query')
+  async queryDatabase(id) {
+    return await this.post(`/databases/${id}/query`)
   }
 
 }

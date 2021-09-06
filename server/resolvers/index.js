@@ -1,5 +1,5 @@
-const unknowResolvers = require('./unknow')
+const collectionResolvers = require('./collection')
 
-const resolvers = [ unknowResolvers ]
+const resolvers = [ collectionResolvers ]
 
 module.exports = resolvers
