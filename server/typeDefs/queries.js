@@ -4,7 +4,7 @@ const queries = gql`
 
   type Query {
 
-    collection: String
+    collection(db: String!): Collection
 
   }
 

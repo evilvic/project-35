@@ -3,7 +3,8 @@ const { gql } = require('apollo-server')
 const types = gql`
 
   type Collection {
-    title: String
+    db: String
+    data: String
   }
 
 `
