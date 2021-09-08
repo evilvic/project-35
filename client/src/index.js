@@ -6,6 +6,8 @@ import { GlobalStyles } from 'src/styles/globals'
 import { ThemeProvider } from 'styled-components'
 import { dark, light } from 'src/styles/constants'
 import UIProvider, { UIContext }  from 'src/contexts/ui'
+import { ApolloProvider } from '@apollo/client'
+import client from 'src/configs/apollo'
 import { useTranslation } from 'react-i18next'
 import 'src/locales/i18n'
 
@@ -36,7 +38,9 @@ const AppWithContexts = () => (
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppWithContexts />
+    <ApolloProvider client= { client }>
+      <AppWithContexts />
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )
