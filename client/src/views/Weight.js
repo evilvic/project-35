@@ -1,29 +1,34 @@
 import { useTranslation } from 'react-i18next'
-import { gql, useQuery } from '@apollo/client'
-
-const COLLECTION = gql`
-  query GetCollection($db: String!) {
-    collection(db: $db) {
-      db
-      data
-    }
-  }
-`
+import { useQuery } from '@apollo/client'
+import { COLLECTION } from 'src/apollo/requests'
+import { collections as c } from 'src/helpers/constants'
 
 const Weight = () => {
 
   const { t } = useTranslation()
+  const { loading, error, data } = useQuery(COLLECTION, { variables: { db: c.weight } })
+  let points
 
-  const { loading, error, data } = useQuery(COLLECTION, {
-    variables: {
-      db: '966ad8cc8faf4695b3743f22efbc6d99'
-    }
-  })
-
-  console.log(loading, error, data)
+  if (!loading && data) {
+    const { collection: { data: d } } = data
+    points = JSON.parse(d)
+    console.log(points)
+  }
+  if (!loading && error) console.error('Error in query COLLECTION >>> ', error)
 
   return (
-    <h2>{ t('views.weight') }</h2>
+    <>
+      <h2>{ t('views.weight') }</h2>
+      { loading ? <p>loading...</p> : error ? <p>error</p> :
+        <>
+          { points.map(el =>
+            <div key={ el.id }>
+              <p>{ el.weight }</p>
+            </div>
+          )}
+        </>
+      }
+    </>
   )
 
 }

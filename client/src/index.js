@@ -7,7 +7,7 @@ import { ThemeProvider } from 'styled-components'
 import { dark, light } from 'src/styles/constants'
 import UIProvider, { UIContext }  from 'src/contexts/ui'
 import { ApolloProvider } from '@apollo/client'
-import client from 'src/configs/apollo'
+import client from 'src/apollo/config'
 import { useTranslation } from 'react-i18next'
 import 'src/locales/i18n'
 
