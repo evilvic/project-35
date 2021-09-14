@@ -12,6 +12,12 @@ const parseWeightCollection = (results) => {
     data.push(point)
   })
 
+  data.map((el, idx, arr) => {
+    if (idx === 0) el['delta'] = '0.0'
+    if (idx !== 0) el['delta'] = (el.weight - arr[idx - 1].weight).toFixed(1)
+    return el
+  })
+
   return JSON.stringify(data)
 
 }
