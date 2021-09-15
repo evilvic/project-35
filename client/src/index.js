@@ -14,10 +14,10 @@ import 'src/locales/i18n'
 const App = () => {
 
   const ui = useContext(UIContext)
-  const { i18n } = useTranslation()
+  //const { i18n } = useTranslation()
 
   const theme = ui.state.dark ? dark : light
-  i18n.changeLanguage(ui.state.lang);
+  //i18n.changeLanguage(ui.state.lang);
 
   return (
     <ThemeProvider theme={ theme }>
