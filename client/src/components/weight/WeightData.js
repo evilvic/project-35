@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components"
-import useElementSize from "src/hooks/useElementSize"
-import { computeMissingSquares } from "src/helpers/methods"
+import styled, { css } from 'styled-components'
+import useElementSize from 'src/hooks/useElementSize'
+import { computeMissingSquares } from 'src/helpers/methods'
 
 const Container = styled.div`
   height: 100vh;
