@@ -8,16 +8,12 @@ import { dark, light } from 'src/styles/constants'
 import UIProvider, { UIContext }  from 'src/contexts/ui'
 import { ApolloProvider } from '@apollo/client'
 import client from 'src/apollo/config'
-import { useTranslation } from 'react-i18next'
 import 'src/locales/i18n'
 
 const App = () => {
 
   const ui = useContext(UIContext)
-  //const { i18n } = useTranslation()
-
   const theme = ui.state.dark ? dark : light
-  //i18n.changeLanguage(ui.state.lang);
 
   return (
     <ThemeProvider theme={ theme }>
