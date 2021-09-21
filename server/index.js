@@ -13,6 +13,10 @@ const server = new ApolloServer({
     return {
       notion: new NotionAPI()
     }
+  },
+  cors: {
+    origin: process.env.CLIENT_EP,
+    credentials: true
   }
 })
 

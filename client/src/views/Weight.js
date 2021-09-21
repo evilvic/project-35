@@ -5,8 +5,6 @@ import WeightData from 'src/components/weight/WeightData'
 
 const Weight = () => {
 
-  console.log("TEST LOG FROM WEIGHT VIEW")
-
   const { loading, error, data } = useQuery(COLLECTION, { variables: { db: cs.weight } })
 
   return (
