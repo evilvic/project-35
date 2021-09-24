@@ -1,11 +1,11 @@
 import { Switch, Route } from 'react-router-dom'
-import Home from 'src/views/Home'
+// import Home from 'src/views/Home'
 import Weight from 'src/views/Weight'
 
 const Router = () => (
   <Switch>
-    <Route exact path='/weight' component={ Weight } />
-    <Route exact path='/' component={ Home } />
+    <Route exact path='/' component={ Weight } />
+    {/* <Route exact path='/' component={ Home } /> */}
   </Switch>
 
 )

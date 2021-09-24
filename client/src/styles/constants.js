@@ -13,11 +13,11 @@ export const devices = {
 }
 
 export const dark = {
-  background: '#000',
+  background: '#2f3437',
   text: '#fff',
 }
 
 export const light = {
   background: '#fff',
-  text: '#000',
+  text: '#2f3437',
 }
