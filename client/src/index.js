@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import Router from 'src/router'
 import { GlobalStyles } from 'src/styles/globals'
 import { ThemeProvider } from 'styled-components'
-import { dark, light } from 'src/styles/constants'
+import { darkTheme, lightTheme } from 'src/styles/constants'
 import UIProvider, { UIContext }  from 'src/contexts/ui'
 import { ApolloProvider } from '@apollo/client'
 import client from 'src/apollo/config'
@@ -13,7 +13,7 @@ import 'src/locales/i18n'
 const App = () => {
 
   const ui = useContext(UIContext)
-  const theme = ui.state.dark ? dark : light
+  const theme = ui.state.dark ? darkTheme : lightTheme
 
   return (
     <ThemeProvider theme={ theme }>

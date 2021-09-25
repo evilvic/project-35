@@ -6,18 +6,28 @@ const sizes = {
 }
 
 export const devices = {
-  mobile: `(min-width: ${sizes.mobile})`,
-  tablet: `(min-width: ${sizes.tablet})`,
-  laptop: `(min-width: ${sizes.laptop})`,
-  desktop: `(min-width: ${sizes.desktop})`,
+  mobile: `(min-width: ${ sizes.mobile })`,
+  tablet: `(min-width: ${ sizes.tablet })`,
+  laptop: `(min-width: ${ sizes.laptop })`,
+  desktop: `(min-width: ${ sizes.desktop })`,
 }
 
-export const dark = {
-  background: '#2f3437',
-  text: '#fff',
+const baseTheme = {
+  purple: '#8786b3',
+  red: '#0ABAB5',
+  blue: '#FF6584'
 }
 
-export const light = {
-  background: '#fff',
-  text: '#2f3437',
+export const darkTheme = {
+  background: '#2F3437',
+  text: '#FFFFFF',
+  void: '255, 255, 255',
+  ...baseTheme
+}
+
+export const lightTheme = {
+  background: '#FFFFFF',
+  text: '#2F3437',
+  void: '47, 52, 55',
+  ...baseTheme
 }

@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client'
 import { COLLECTION } from 'src/apollo/requests'
 import { collections as cs } from 'src/helpers/constants'
-import WeightData from 'src/components/weight/WeightData'
+import WeightData from 'src/components/WeightData'
 
 const Weight = () => {
 

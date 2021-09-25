@@ -9,8 +9,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: ${({ theme }) => theme.background};
-    color: ${({ theme }) => theme.text};
+    background: ${ ({ theme }) => theme.background };
+    color: ${ ({ theme }) => theme.text };
   }
 
 `
