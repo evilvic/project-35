@@ -13,4 +13,8 @@ export const GlobalStyles = createGlobalStyle`
     color: ${ ({ theme }) => theme.text };
   }
 
+  tspan {
+    font-family: monospace;
+  }
+
 `

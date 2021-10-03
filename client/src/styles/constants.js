@@ -14,8 +14,8 @@ export const devices = {
 
 const baseTheme = {
   purple: '#8786b3',
-  red: '#0ABAB5',
-  blue: '#FF6584'
+  blue: '#0ABAB5',
+  red: '#FF6584'
 }
 
 export const darkTheme = {

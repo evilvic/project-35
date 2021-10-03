@@ -11,9 +11,9 @@ const WeightSquare = styled(Square)`
   ` || delta === '0.0' && css`
     background: ${ theme.purple };
   ` || delta.includes('-') && css`
-    background: ${ theme.red };
-  ` || css`
     background: ${ theme.blue };
+  ` || css`
+    background: ${ theme.red };
   `}
 `
 
