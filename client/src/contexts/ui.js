@@ -9,12 +9,19 @@ class UIProvider extends Component {
     lang: 'en'
   }
 
+  toggleTheme = () => {
+    this.setState(prevState => ({
+      ...prevState,
+      dark: !prevState.dark
+    }))
+  }
+
   render() {
 
-    const { state } = this
+    const { state, toggleTheme } = this
 
     return (
-      <UIContext.Provider value={{ state }}>
+      <UIContext.Provider value={{ state, toggleTheme }}>
         { this.props.children }
       </UIContext.Provider>
     )

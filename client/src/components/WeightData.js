@@ -35,10 +35,10 @@ const WeightData = ({ loading, error, data }) => {
       {loading && [...Array(missingSquares).keys()].map((_, idx) =>
         <WeightSquare key={ idx } rdm={ rdm() } />
       )}
-      {!loading && data && points.map(({ id, delta }) =>
+      {!loading && data && missingSquares >= 0 && points.map(({ id, delta }) =>
         <WeightSquare key={ id } delta={ delta } />
       )}
-      {!loading && data && [...Array(missingSquares).keys()].map((_, idx) =>
+      {!loading && data && missingSquares >= 0 && [...Array(missingSquares).keys()].map((_, idx) =>
         <WeightSquare key={ idx } />
       )}
     </SquaresContainer>

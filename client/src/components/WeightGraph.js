@@ -37,7 +37,7 @@ const WeightGrap = ({ loading, error, data }) => {
         <ResponsiveContainer>
           <LineChart
             data={ line }
-            margin={{ top: 30, right: 30, bottom: 15, left: 15 }}
+            margin={{ top: 15, right: 15, bottom: 0, left: 0 }}
           >
             <CartesianGrid 
               strokeDasharray='5 5'
@@ -67,6 +67,7 @@ const WeightGrap = ({ loading, error, data }) => {
             />
             {references.map(month => (
               <ReferenceLine
+                key={ month }
                 x={ month }
                 stroke={ theme.purple }
                 strokeDasharray='3 3'
