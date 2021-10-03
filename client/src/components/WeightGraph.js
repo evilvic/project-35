@@ -28,8 +28,8 @@ const WeightGrap = ({ loading, error, data }) => {
   }
   if (!loading && error) console.error('Error in query COLLECTION >>> ', error)
 
-  const { element, width, height } = useElementSize(data)
-  const line = !loading && data ? points.map(({ date, weight }) => ({ date: date.slice(-2), weight: Number(weight) })).slice(-30) : []
+  const { element, width } = useElementSize(data)
+  const { line, domain, tickCount, references } = computeLine(data, points, width)
 
   return (
     <GraphContainer ref={ element }>
@@ -60,17 +60,19 @@ const WeightGrap = ({ loading, error, data }) => {
             />
             <YAxis
               axisLine={{ stroke: theme.purple, strokeWidth: 3 }}
-              domain={[ 102, 108 ]}
-              tickCount={ 13 }
+              domain={ domain }
+              tickCount={ tickCount }
               tick={{ stroke: theme.purple, strokeWidth: 1 }}
               tickLine={ false }
             />
-            <ReferenceLine
-              x='01'
-              stroke={ theme.purple }
-              strokeDasharray='3 3'
-              strokeWidth={ 3 }
-            />
+            {references.map(month => (
+              <ReferenceLine
+                x={ month }
+                stroke={ theme.purple }
+                strokeDasharray='3 3'
+                strokeWidth={ 3 }
+              />
+            ))}
             <Tooltip
               itemStyle={{ fontFamily: 'monospace', fontWeight: 'bold' }}
               contentStyle={{
@@ -91,4 +93,3 @@ const WeightGrap = ({ loading, error, data }) => {
 }
 
 export default WeightGrap
-//[`${value} kg`]

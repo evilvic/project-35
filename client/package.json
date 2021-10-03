@@ -2,6 +2,7 @@
   "name": "project-35_client",
   "dependencies": {
     "@apollo/client": "^3.4.10",
+    "dayjs": "^1.10.7",
     "graphql": "^15.5.3",
     "i18next": "^20.6.0",
     "react": "^17.0.2",
