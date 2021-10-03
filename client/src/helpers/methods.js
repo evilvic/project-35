@@ -7,3 +7,7 @@ export const computeMissingSquares = (data, points, width = 0, height = 0) => {
 }
 
 export const rdm = () => Math.floor(Math.random() * 4) + 1;
+
+export const computeLine = (data, points, width=0, height=0) => {
+  
+}

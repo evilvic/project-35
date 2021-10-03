@@ -31,3 +31,9 @@ export const Square = styled.div`
     ${ loadingAnimation(t, 4, 0.3, 0.2) }
   `}
 `
+
+export const GraphContainer = styled.div`
+  width: 100vw; 
+  height: 100vh;
+  overflow: hidden;
+`
