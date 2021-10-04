@@ -11,6 +11,9 @@ const WeightBar = ({ handleTab }) => {
   return (
     <Bar>
       <LeftBar>
+        <BarButton onClick={ () => ui.toggleTheme() }>
+          { ui.state.dark ? <BsSun/> : <BsMoon/> }
+        </BarButton>
         <BarButton onClick={ () => handleTab('data') }>
           <BsSquare/>
         </BarButton>
@@ -19,10 +22,6 @@ const WeightBar = ({ handleTab }) => {
         </BarButton>
       </LeftBar>
       <div>
-        <BarButton onClick={ () => ui.toggleTheme() }>
-          { ui.state.dark ? <BsSun/> : <BsMoon/> }
-        </BarButton>
-
       </div>
     </Bar>
   )
