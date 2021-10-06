@@ -6,8 +6,6 @@ import { UIContext } from 'src/contexts/ui'
 
 const WeightBar = ({ handleTab }) => {
 
-  console.log("PARENT DOCUMENT: ", parent.document)
-
   const ui = useContext(UIContext)
 
   return (
