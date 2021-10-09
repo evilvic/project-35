@@ -14,10 +14,10 @@ const server = new ApolloServer({
       notion: new NotionAPI()
     }
   },
-  cors: {
-    origin: process.env.CLIENT_EP,
-    credentials: true
-  }
+  // cors: {
+  //   origin: process.env.CLIENT_EP,
+  //   credentials: true
+  // }
 })
 
 server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
