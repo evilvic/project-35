@@ -4,15 +4,16 @@ import useElementSize from 'src/hooks/useElementSize'
 import { computeMissingSquares, rdm } from 'src/helpers/methods'
 
 const WeightSquare = styled(Square)`
-  ${ ({ theme, rdm, range }) => rdm && css`
+  ${ ({ theme, rdm, goal }) => rdm && css`
     animation: loading-${rdm} 1s infinite;
-  ` || range == 0 && css`
+  ` || goal == 0 && css`
     background: ${ theme.red };
-  `  || !range && css`
+  ` || !goal && css`
     background: rgba(${ theme.void }, 0.1);
-  ` || css`
-    background: ${theme. purple };
-    opacity: ${range}%;
+  ` || goal == 1 && css`
+    background: ${ theme.purple };
+  `|| css`
+    background: ${ theme.blue };
   `}
 `
 
@@ -23,7 +24,6 @@ const WeightData = ({ loading, error, data }) => {
   if (!loading && data) {
     const { collection: { data: d } } = data
     points = JSON.parse(d)
-    console.log(points)
   }
   if (!loading && error) console.error('Error in query COLLECTION >>> ', error)
 
@@ -35,8 +35,8 @@ const WeightData = ({ loading, error, data }) => {
       {loading && [...Array(missingSquares).keys()].map((_, idx) =>
         <WeightSquare key={ idx } rdm={ rdm() } />
       )}
-      {!loading && data && missingSquares >= 0 && points.map(({ id, range }) =>
-        <WeightSquare key={ id } range={ range } />
+      {!loading && data && missingSquares >= 0 && points.map(({ id, goal }) =>
+        <WeightSquare key={ id } goal={ goal } />
       )}
       {!loading && data && missingSquares >= 0 && [...Array(missingSquares).keys()].map((_, idx) =>
         <WeightSquare key={ idx } />

@@ -4,7 +4,7 @@ import { COLLECTION } from 'src/apollo/requests'
 import { collections as cs } from 'src/helpers/constants'
 import WeightBar from 'src/components/WeightBar'
 import ReadingData from 'src/components/ReadingData'
-import WeightGrap from 'src/components/WeightGraph'
+import ReadingGraph from 'src/components/ReadingGraph'
 
 const Weight = () => {
 
@@ -24,7 +24,7 @@ const Weight = () => {
         error={ error }
         data={ data }
       />}
-      {tab === 'graph' && <WeightGrap
+      {tab === 'graph' && <ReadingGraph
         loading={ loading }
         error={ error }
         data={ data }

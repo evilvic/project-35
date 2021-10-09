@@ -26,3 +26,15 @@ export const computeLine = (data, points, width = 0) => {
   const references = data ? line.map(({ date }) => isNaN(date) && date).filter(el => el) : []
   return { line, domain, tickCount, references }
 }
+
+export const computeReadingLine = (data, points, width = 0) => {
+  const elements = width < 425 ? 7 : width < 768 ? 15 : width < 1024 ? 21 : width < 1440 ? 30 : points?.length || 0
+  const line = data ? points.map(({ date, time }) => ({ date: parseX(date, width), time: Number(time) })).slice(-elements) : []
+  const values = data ? line.map(point => Number(point.time) ): []
+  const min = 0
+  const max = data ? (Math.round(Math.max(...values) / 10) * 10) + 10 : 0;
+  const domain = [ min, max ]
+  const tickCount = data ? ((max) / 10) + 1 : 0
+  const references = data ? line.map(({ date }) => isNaN(date) && date).filter(el => el) : []
+  return { line, domain, tickCount, references }
+}

@@ -37,11 +37,8 @@ const parseReadingCollection = (results) => {
     data.push(point)
   })
 
-  const values = data.map(({ time }) => time);
-  const max = Math.max(...values)
-
   data.map(el => {
-    el['range'] = Math.round((el.time / max) * 100)
+    el['goal'] = el.time === 0 ? 0 : el.time <= 30 ? 1 : 2
     return el
   })
 
