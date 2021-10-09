@@ -3,7 +3,7 @@ import { useQuery } from '@apollo/client'
 import { COLLECTION } from 'src/apollo/requests'
 import { collections as cs } from 'src/helpers/constants'
 import WeightBar from 'src/components/WeightBar'
-import WeightData from 'src/components/WeightData'
+import ReadingData from 'src/components/ReadingData'
 import WeightGrap from 'src/components/WeightGraph'
 
 const Weight = () => {
@@ -19,7 +19,7 @@ const Weight = () => {
         tab= { tab }
         handleTab= { handleTab }
       />
-      {tab === 'data' && <WeightData
+      {tab === 'data' && <ReadingData
         loading={ loading }
         error={ error }
         data={ data }
