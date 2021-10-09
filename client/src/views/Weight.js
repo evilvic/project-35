@@ -9,7 +9,7 @@ import WeightGrap from 'src/components/WeightGraph'
 const Weight = () => {
 
   const [ tab, setTab ] = useState('data')
-  const { loading, error, data } = useQuery(COLLECTION, { variables: { db: cs.weight } })
+  const { loading, error, data } = useQuery(COLLECTION, { variables: { db: 'weight' } })
 
   const handleTab = tab => setTab(tab)
 
